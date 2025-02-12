@@ -37,7 +37,7 @@ export default function Footer() {
               <li>
                 <a href="#features" className="hover:text-purple-400 transition-colors">Features</a>
               </li>
-              <li>
+              <li>r
                 <a href="#pricing" className="hover:text-purple-400 transition-colors">Pricing</a>
               </li>
               <li>
@@ -55,15 +55,15 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-3" />
-                <span>support@businesstracker.com</span>
+                <span>birzcrown@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 6206680658</span>
               </li>
               <li className="flex items-center">
                 <MapPin className="w-5 h-5 mr-3" />
-                <span>123 Business Ave, Suite 100<br />San Francisco, CA 94107</span>
+                <span>400001 Business Ave, BAZARGATE<br />MAHARASHTRA, MUMBAI</span>
               </li>
             </ul>
           </div>
