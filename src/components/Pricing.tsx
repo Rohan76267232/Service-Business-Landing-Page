@@ -9,52 +9,56 @@ interface Plan {
   features: string[];
   icon: any; // Using 'any' for simplicity with Lucide icons
   popular?: boolean;
+  purchaseUrl: string; // Add purchase URL for each plan
 }
 
 const plans: Plan[] = [
   {
     name: 'Starter',
-    price: 29,
+    price: 299,
     description: 'Perfect for freelancers and solo entrepreneurs',
     features: [
-      'Up to 50 clients',
-      'Basic task management',
-      'Calendar integration',
-      'Invoice generation',
-      'Email support'
+      'Client Management',
+      'Income & Expense Tracking',
+      'Basic Invoice Generation',
+      'Monthly Financial Overview',
+      'Task & Project Tracking'
     ],
-    icon: Zap
+    icon: Zap,
+    purchaseUrl: 'https://superprofile.bio/vp/67ab7c80eaa9b90012c98dd6'
   },
   {
     name: 'Professional',
-    price: 79,
+    price: 499,
     description: 'Ideal for growing businesses and small teams',
     features: [
-      'Unlimited clients',
-      'Advanced task management',
-      'Team collaboration',
-      'Custom branding',
-      'Priority support',
-      'Analytics dashboard',
-      'API access'
+      'All Starter Plan features +',
+      'Automated Financial Reports',
+      'Custom Invoice Templates',
+      '12-Month Performance Tracking',
+      'Tax Calculation & Reconciliation',
+      'Advanced Filtering & Sorting'
+      
     ],
     popular: true,
-    icon: Crown
+    icon: Crown,
+    purchaseUrl: 'https://superprofile.bio/vp/67ac2abd81438f001275cc29'
   },
   {
     name: 'Enterprise',
-    price: 199,
+    price: 999,
     description: 'For large organizations with complex needs',
     features: [
-      'Everything in Professional',
-      'Dedicated account manager',
-      'Custom integrations',
-      'Advanced security features',
-      'SLA guarantee',
-      'Training sessions',
-      'White-label options'
+      'All Pro Plan features +',
+      'Unlimited Clients & Invoice Management',
+      'Cashflow & Profit/Loss Insights',
+      'Custom Dashboard with KPI Metrics',
+      'Multiple User Access & Collaboration',
+      'Priority Support & Future Updates'
+      
     ],
-    icon: Check
+    icon: Check,
+    purchaseUrl: 'https://superprofile.bio/vp/67ac30b5eaa9b90012d1a128'
   }
 ];
 
@@ -63,7 +67,7 @@ interface PricingCardProps {
 }
 
 const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
-  const { name, price, description, features, popular, icon: Icon } = plan;
+  const { name, price, description, features, popular, icon: Icon, purchaseUrl } = plan;
   
   return (
     <motion.div
@@ -88,8 +92,8 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
       <p className="text-gray-600 dark:text-gray-400 mb-6">{description}</p>
       
       <div className="mb-8">
-        <span className="text-4xl font-bold text-gray-900 dark:text-white">${price}</span>
-        <span className="text-gray-600 dark:text-gray-400">/month</span>
+        <span className="text-4xl font-bold text-gray-900 dark:text-white">₹{price}</span>
+        <span className="text-gray-600 dark:text-gray-400">/lifetime</span>
       </div>
       
       <ul className="space-y-4 mb-8">
@@ -102,7 +106,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
       </ul>
       
       <a
-        href="https://superprofile.bio/vp/66fd6d642a7c60001380464c"
+        href={purchaseUrl}
         target="_blank"
         rel="noopener noreferrer"
         className={`block w-full py-3 px-6 rounded-lg font-semibold text-center transition-all duration-300 ${
@@ -119,7 +123,7 @@ const PricingCard: React.FC<PricingCardProps> = ({ plan }) => {
 
 const Pricing: React.FC = () => {
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section id="pricing-section" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">

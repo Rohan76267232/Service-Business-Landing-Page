@@ -35,7 +35,7 @@ export default function Header() {
             <a href="#features" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 transition-colors">
               Features
             </a>
-            <a href="#pricing" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 transition-colors">
+            <a href="#pricing-section" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 transition-colors">
               Pricing
             </a>
             <a href="#testimonials" className="text-gray-600 dark:text-gray-300 hover:text-purple-600 transition-colors">
@@ -45,9 +45,7 @@ export default function Header() {
               {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <a
-              href="https://superprofile.bio/vp/66fd6d642a7c60001380464c"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#pricing-section"
               className="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-6 py-2 rounded-full hover:shadow-lg transform hover:-translate-y-0.5 transition-all"
             >
               Get Started
@@ -70,7 +68,7 @@ export default function Header() {
             <a href="#features" className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400">
               Features
             </a>
-            <a href="#pricing" className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400">
+            <a href="#pricing-section" className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400">
               Pricing
             </a>
             <a href="#testimonials" className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400">
@@ -86,9 +84,7 @@ export default function Header() {
               </button>
             </div>
             <a
-              href="https://superprofile.bio/vp/66fd6d642a7c60001380464c"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#pricing-section"
               className="block mx-3 py-2 px-4 bg-gradient-to-r from-purple-600 to-blue-500 text-white rounded-full text-center font-semibold hover:shadow-lg"
             >
               Get Started

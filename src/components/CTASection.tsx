@@ -20,7 +20,7 @@ export default function CTASection() {
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-purple-100 mb-8">
-            Join thousands of successful businesses that trust Business Tracker Spreadsheet for seamless operations.
+              Join thousands of successful businesses that trust Business Tracker Spreadsheet for seamless operations.
             </p>
             <ul className="space-y-4 mb-8">
               {benefits.map((benefit, index) => (
@@ -31,14 +31,12 @@ export default function CTASection() {
               ))}
             </ul>
             <a
-              href="https://superprofile.bio/vp/66fd6d642a7c60001380464c"
-              target="_blank"
-              rel="noopener noreferrer" 
+              href="#pricing"
               className="bg-white text-purple-600 px-8 py-4 rounded-full text-lg font-semibold 
                        hover:bg-purple-50 transform hover:-translate-y-1 transition-all duration-300
                        inline-flex items-center"
             >
-              Yes! I Want to Access Now
+              View Pricing Plans
               <ArrowRight className="ml-2 w-5 h-5" />
             </a>
           </div>
@@ -65,13 +63,11 @@ export default function CTASection() {
                            placeholder-purple-200 focus:outline-none focus:border-white"
                 />
                 <a
-                  href="https://superprofile.bio/vp/66fd6d642a7c60001380464c"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#pricing"
                   className="block w-full bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold
                            hover:bg-purple-50 transition-colors text-center"
                 >
-                  Get Started Now
+                  See Pricing Options
                 </a>
               </form>
             </div>

@@ -72,7 +72,7 @@ export default function Hero() {
             <div className="relative w-full max-w-4xl mx-auto mb-8">
               <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
                 <img 
-                  src="https://figmaui4free.com/wp-content/uploads/2022/06/Saas-B2B-Dashboard-Design-1.png"
+                  src="https://i.etsystatic.com/40473668/r/il/63fbef/6413092334/il_1588xN.6413092334_e1kv.jpg"
                   alt="Business Analytics Dashboard"
                   className="w-full rounded-xl"
                 />
@@ -81,12 +81,10 @@ export default function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
               <a 
-                href="https://superprofile.bio/vp/66fd6d642a7c60001380464c"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#pricing"
                 className="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all inline-flex items-center"
               >
-                Start Free Trial
+                Get Started
                 <ArrowRight className="ml-2" />
               </a>
               <button className="text-gray-600 dark:text-gray-300 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">

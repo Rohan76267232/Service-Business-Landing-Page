@@ -34,6 +34,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Add offset for fixed header */
+html {
+  scroll-padding-top: 80px; /* Adjust this value based on your header height */
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

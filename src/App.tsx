@@ -15,18 +15,33 @@ import Footer from './components/Footer';
 
 function App(): JSX.Element {
   useEffect(() => {
-    // Add smooth scrolling behavior
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
+    // Enhanced smooth scrolling implementation
+    const handleSmoothScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.tagName === 'A' && target.getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
-        const href = this.getAttribute('href');
-        if (href) {
-          document.querySelector(href)?.scrollIntoView({
+        const id = target.getAttribute('href')?.slice(1);
+        const element = document.getElementById(id || '');
+        if (element) {
+          const headerOffset = 80; // Adjust this value based on your header height
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
             behavior: 'smooth'
           });
         }
-      } as EventListener);
-    });
+      }
+    };
+
+    // Add click event listener to handle smooth scrolling
+    document.addEventListener('click', handleSmoothScroll);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('click', handleSmoothScroll);
+    };
   }, []);
 
   return (
@@ -39,7 +54,9 @@ function App(): JSX.Element {
       <HowItWorks />
       <ProductFeatures />
       <CaseStudies />
-      <Pricing />
+      <section id="pricing">
+        <Pricing />
+      </section>
       <Testimonials />
       <FAQ />
       <CTASection />

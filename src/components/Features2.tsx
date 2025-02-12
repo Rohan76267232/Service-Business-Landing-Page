@@ -164,9 +164,9 @@ export default function Features2() {
                 whileHover={{ x: 5 }}
                 transition={{ duration: 0.2 }}
               >
-                <a href="#" className="inline-flex items-center text-purple-600 dark:text-purple-400 
+                <a href="#pricing" className="inline-flex items-center text-purple-600 dark:text-purple-400 
                                      font-semibold hover:text-purple-700 dark:hover:text-purple-300">
-                  Learn more
+                  View Pricing
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                   </svg>
