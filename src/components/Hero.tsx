@@ -49,22 +49,22 @@ export default function Hero() {
         <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-pink-300 dark:bg-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className={`transition-all duration-1000 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+          <div className="text-center pt-32 md:pt-40 lg:pt-48">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
                 Transform Your Business
               </span>
               <br />
-              <span className="text-gray-900 dark:text-white">
+              <span className="text-gray-900 dark:text-white mt-2 block">
                 With Smart Tracking
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
               Join over 10,000+ businesses that use BusinessTracker to streamline operations, 
               boost productivity, and increase revenue by up to 300%.
             </p>
@@ -92,7 +92,7 @@ export default function Hero() {
               </button>
             </div>
 
-            <div className="flex items-center justify-center space-x-8 text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500 dark:text-gray-400">
               <p>
                 <span className="font-semibold text-purple-600 dark:text-purple-400">{visitorCount}</span> people are viewing this page
               </p>
