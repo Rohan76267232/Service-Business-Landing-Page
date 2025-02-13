@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
@@ -37,6 +38,32 @@ export default function Hero() {
     return `${mins}:${secs.toString().padStart(2, '0')}`;
   };
 
+  const textVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const letterVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const words = ["Transform", "Your", "Business"];
+
   return (
     <div className="relative min-h-screen flex items-center">
       {/* Background with gradient */}
@@ -54,35 +81,80 @@ export default function Hero() {
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
           <div className="text-center pt-32 md:pt-40 lg:pt-48">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-                Transform Your Business
-              </span>
-              <br />
-              <span className="text-gray-900 dark:text-white mt-2 block">
+            <motion.h1 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: {
+                    staggerChildren: 0.1
+                  }
+                }
+              }}
+            >
+              <div className="overflow-hidden">
+                {words.map((word, i) => (
+                  <motion.span
+                    key={i}
+                    className="inline-block mr-4 bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent"
+                    variants={textVariants}
+                  >
+                    {word.split('').map((letter, index) => (
+                      <motion.span
+                        key={index}
+                        className="inline-block font-sans"
+                        variants={letterVariants}
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </motion.span>
+                ))}
+              </div>
+              <motion.span 
+                className="text-gray-900 dark:text-white mt-4 block font-bold"
+                variants={textVariants}
+              >
                 With Smart Tracking
-              </span>
-            </h1>
+              </motion.span>
+            </motion.h1>
             
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            <motion.p 
+              className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto font-medium leading-relaxed"
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+            >
               Join over 10,000+ businesses that use BusinessTracker to streamline operations, 
               boost productivity, and increase revenue by up to 300%.
-            </p>
+            </motion.p>
 
             <div className="relative w-full max-w-4xl mx-auto mb-8">
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)]">
+              <motion.div 
+                className="bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-[0_8px_30px_rgb(0,0,0,0.12)] dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)]"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.8 }}
+              >
                 <img 
                   src="https://i.etsystatic.com/40473668/r/il/63fbef/6413092334/il_1588xN.6413092334_e1kv.jpg"
                   alt="Business Analytics Dashboard"
                   className="w-full rounded-xl"
                 />
-              </div>
+              </motion.div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.5 }}
+            >
               <a 
                 href="#pricing"
-                className="bg-gradient-to-r from-purple-600 to-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all inline-flex items-center"
+                className="bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg transform hover:-translate-y-0.5 transition-all inline-flex items-center"
               >
                 Get Started
                 <ArrowRight className="ml-2" />
@@ -90,16 +162,21 @@ export default function Hero() {
               <button className="text-gray-600 dark:text-gray-300 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
                 Watch Demo
               </button>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500 dark:text-gray-400">
+            <motion.div 
+              className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-sm text-gray-500 dark:text-gray-400"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1, duration: 0.5 }}
+            >
               <p>
                 <span className="font-semibold text-purple-600 dark:text-purple-400">{visitorCount}</span> people are viewing this page
               </p>
               <p>
                 Special offer ends in: <span className="font-semibold text-purple-600 dark:text-purple-400">{formatTime(timeLeft)}</span>
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
