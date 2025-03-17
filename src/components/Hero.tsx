@@ -160,7 +160,7 @@ export default function Hero() {
                 <ArrowRight className="ml-2" />
               </a>
               <button className="text-gray-600 dark:text-gray-300 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
-                Watch Demo
+                View Pricing
               </button>
             </motion.div>
 
