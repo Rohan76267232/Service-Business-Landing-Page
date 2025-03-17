@@ -15,7 +15,7 @@ interface Plan {
 const plans: Plan[] = [
   {
     name: 'Premium Package',
-    price: 499,
+    price: 399,
     description: 'One-time payment, lifetime access',
     features: [
       'All 16+ Premium Features',
